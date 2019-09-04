@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/briancodes/ng-scss-css-variables"
+        "url": "git+https://github.com/briancodes/ngx-theme-service"
     },
     "keywords": [
         "angular",
@@ -25,7 +25,7 @@
     "author": "briancodes",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/briancodes/ng-scss-css-variables/issues"
+        "url": "https://github.com/briancodes/ngx-theme-service/issues"
     },
-    "homepage": "https://github.com/briancodes/ng-scss-css-variables"
+    "homepage": "https://github.com/briancodes/ngx-theme-service"
 }
