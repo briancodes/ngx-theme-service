@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'mixins';
+
+// Some of these would generally be higher level stylings, but for demo
+// we're styling against the component directly
+article {
+    background-color: theme-var($--theme-surface);
+    color: theme-var($--theme-on-surface);
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 1em;
+    word-break: break-word;
+
+    a {
+        color: theme-var($--theme-secondary);
+        font-weight: bold;
+    }
+}
+
+.light code {
+    background-color: #e8e8e8;
+}
+.dark code {
+    background-color: #565656;
+}

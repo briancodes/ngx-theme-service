@@ -1,0 +1,44 @@
+// Files beginning with '_' are partials and are meant to be imported. They
+// not compiled directly: https://sass-lang.com/documentation/at-rules/import#partials
+
+// Themes CSS Variables
+// @see https://material.io/develop/web/components/theme/
+
+$--theme-primary: --theme-primary;
+$--theme-secondary: --theme-secondary;
+$--theme-surface: --theme-surface;
+$--theme-background: --theme-background;
+$--theme-on-primary: --theme-on-primary;
+$--theme-on-secondary: --theme-on-secondary;
+$--theme-on-surface: --theme-on-surface;
+
+// Equivalent to:
+// --theme-primary: #d75893;
+// --theme-secondary: #9b4dca;
+
+$theme-map-light: (
+    $--theme-primary: #d75893,
+    $--theme-secondary: #9b4dca,
+    $--theme-surface: #fff,
+    $--theme-background: #fafafa,
+    $--theme-on-primary: #fff,
+    $--theme-on-secondary: #fff,
+    $--theme-on-surface: #000,
+);
+
+// Override the light theme
+$theme-map-dark: (
+    $--theme-primary: #f34c84,
+    $--theme-secondary: #c297dc,
+    $--theme-surface: #2f2b2b,
+    $--theme-background: #1b1919,
+    $--theme-on-primary: #443e42,
+    $--theme-on-secondary: #000,
+    $--theme-on-surface: #f5f1f1,
+);
+
+$theme-transition-delay: 1500ms;
+
+// Other Variables
+$max-width: 750px;
+$icon-size: 1.5em;

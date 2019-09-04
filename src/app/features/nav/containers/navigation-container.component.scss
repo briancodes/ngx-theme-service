@@ -1,0 +1,111 @@
+@import 'variables';
+@import 'mixins';
+
+nav {
+    background-color: theme-var($--theme-primary);
+    color: theme-var($--theme-on-primary);
+    padding: 0.5em;
+    font-weight: bold;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin: 0.25em 0;
+        font-weight: bold;
+    }
+}
+
+.nav-sticky {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    @include bs-elevate;
+}
+
+.nav-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    > * {
+        margin-right: 0.4em;
+    }
+    fa-icon {
+        font-size: 1em;
+    }
+}
+
+fa-icon {
+    font-size: $icon-size;
+    color: theme-var($--theme-on-primary);
+}
+
+.nav-item-group {
+    display: flex;
+    align-items: center;
+    > * {
+        margin-left: 0.7em;
+    }
+}
+
+.theme-switcher {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 100%;
+    right: 5px;
+    width: 100px;
+    background-color: theme-var($--theme-secondary);
+    color: theme-var($--theme-on-secondary);
+    border-radius: 0 0 10px 10px;
+    border: 2px solid theme-var($--theme-on-secondary);
+    @include bs-elevate();
+
+    li {
+        margin-bottom: 0px;
+        cursor: pointer;
+        &.selected fa-icon {
+            border-bottom: 2px solid theme-var($--theme-on-secondary);
+        }
+    }
+    fa-icon {
+        color: theme-var($--theme-on-primary);
+    }
+}
+
+/*
+    Css needed to break out of ViewEncapsulation.Emulated for `.theme-transition`, and
+    to go deep to target `fa-icon svg[data-icon='sun']`:
+    .theme-transition [_nghost-scb-c1] li.selected fa-icon svg[data-icon='sun'] {
+        -webkit-animation: rotate-z 1050ms ease-out;
+        animation: rotate-z 1050ms ease-out;
+    }
+*/
+:host-context(.theme-transition) ::ng-deep li.selected fa-icon {
+    svg[data-icon='sun'] {
+        animation: rotate-z $theme-transition-delay * 0.7 ease-out;
+    }
+    svg[data-icon='star-and-crescent'] {
+        animation: rotate-y $theme-transition-delay * 0.7 ease-out;
+    }
+}
+
+@keyframes rotate-z {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate-y {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}

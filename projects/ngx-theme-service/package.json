@@ -1,0 +1,31 @@
+{
+    "name": "@bcodes/ngx-theme-service",
+    "version": "1.0.0",
+    "description": "Configurable theme switching service for use with CSS variables",
+    "peerDependencies": {
+        "@angular/common": ">=8.2.0",
+        "@angular/core": ">=8.2.0",
+        "rxjs": ">=6.4.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/briancodes/ng-scss-css-variables"
+    },
+    "keywords": [
+        "angular",
+        "ng2",
+        "ngx",
+        "ng",
+        "typescript",
+        "angular2",
+        "css",
+        "variables",
+        "theme"
+    ],
+    "author": "briancodes",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/briancodes/ng-scss-css-variables/issues"
+    },
+    "homepage": "https://github.com/briancodes/ng-scss-css-variables"
+}
