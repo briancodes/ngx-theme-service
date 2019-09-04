@@ -1,9 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import {
-    FaIconLibrary,
-    FontAwesomeModule,
-} from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import {
     faCss3Alt,
     faGithub,
@@ -22,9 +19,9 @@ const FA_SOLID_ICONS = [faFillDrip, faHome, faMoon, faSun, faStarAndCrescent];
 
 @NgModule({
     declarations: [],
-    imports: [CommonModule, FontAwesomeModule],
+    imports: [CommonModule],
 })
-export class FAModule {
+export class IconsModule {
     constructor(library: FaIconLibrary) {
         // @see https://golb.hplar.ch/2019/02/fa.html
         library.addIcons(...FA_BRAND_ICONS, ...FA_SOLID_ICONS);

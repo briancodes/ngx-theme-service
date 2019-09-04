@@ -24,7 +24,10 @@ import { ThemeService } from '@bcodes/ngx-theme-service';
                 >
                     <fa-icon [icon]="['fas', 'fill-drip']"></fa-icon>
                 </a>
-                <a href="#" target="_blank">
+                <a
+                    href="https://github.com/briancodes/ngx-theme-service"
+                    target="_blank"
+                >
                     <fa-icon [icon]="['fab', 'github']"></fa-icon>
                 </a>
             </div>
@@ -45,7 +48,7 @@ import { ThemeService } from '@bcodes/ngx-theme-service';
         </nav>
         <nav class="nav-title">
             <h4>
-                Scss CSS Variables:
+                Theming with CSS Variables:
             </h4>
             <fa-icon [icon]="['fab', 'sass']"></fa-icon>
             <fa-icon [icon]="['fab', 'css3-alt']"></fa-icon>
