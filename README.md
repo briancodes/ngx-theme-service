@@ -57,7 +57,7 @@ By default the theme classes (and optional transition class) will be applied to 
     targetElementSelector: 'body'
 ```
 
-> Demo example: [common.constants.ts](src/app/shared/common.constants.ts#L3), [app.module.ts](src/app/app.module.ts#L13)
+> Demo example: [common.constants.ts](https://github.com/briancodes/ngx-theme-service/blob/master/src/app/shared/common.constants.ts#L3), [app.module.ts](https://github.com/briancodes/ngx-theme-service/blob/master/src/app/app.module.ts#L13)
 
 ## Use
 
@@ -87,7 +87,7 @@ Subscribe to theme changes:
 selected$ = this.themeService.selectedTheme$;
 ```
 
-> Demo example: [navigation-container.component.ts](src/app/features/nav/containers/navigation-container.component.ts#L60)
+> Demo example: [navigation-container.component.ts](https://github.com/briancodes/ngx-theme-service/blob/master/src/app/features/nav/containers/navigation-container.component.ts#L60)
 
 ## Style
 
@@ -110,4 +110,4 @@ Example theme styling:
 
 > Note: you could also use `transition: all 1500ms !important;`
 
-> Demo example: [themes.scss](src/styles/themes.scss)
+> Demo example: [themes.scss](https://github.com/briancodes/ngx-theme-service/blob/master/src/styles/themes.scss)
