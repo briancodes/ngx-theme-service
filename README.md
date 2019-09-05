@@ -6,7 +6,7 @@
   <i>Default light theme with transition</i>
 </p>
 
-View the [demo app](https://ngx-theme-service.web.app) hosted on Firebase
+View the [demo app](https://ngx-theme-service.web.app)
 
 ## Install
 
