@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import * as marked from 'marked';
-import * as homePageMarkdown from 'raw-loader!./home-page.md';
+import * as homePageMarkdown from 'raw-loader!README.md';
 
 @Component({
     selector: 'app-home-container',
