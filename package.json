@@ -10,7 +10,8 @@
         "e2e": "ng e2e",
         "build:lib": "ng build ngx-theme-service && npm run copy:readme",
         "test:lib": "ng test ngx-theme-service",
-        "copy:readme": "copyfiles README.md dist/ngx-theme-service"
+        "copy:readme": "copyfiles README.md dist/ngx-theme-service",
+        "deploy": "ng build --prod && cd dist/demo && firebase deploy"
     },
     "private": true,
     "dependencies": {
