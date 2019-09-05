@@ -25,14 +25,9 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "aot": false,
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets"],
                         "stylePreprocessorOptions": {
-                            "includePaths": [
-                                "src/styles"
-                            ]
+                            "includePaths": ["src/styles"]
                         },
                         "styles": [
                             {
@@ -100,14 +95,9 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets"],
                         "stylePreprocessorOptions": {
-                            "includePaths": [
-                                "src/styles"
-                            ]
+                            "includePaths": ["src/styles"]
                         },
                         "styles": [
                             "src/styles/styles.scss",
@@ -127,9 +117,7 @@
                             "tsconfig.spec.json",
                             "e2e/tsconfig.json"
                         ],
-                        "exclude": [
-                            "**/node_modules/**"
-                        ]
+                        "exclude": ["**/node_modules/**"]
                     }
                 },
                 "e2e": {
@@ -174,9 +162,7 @@
                             "projects/ngx-theme-service/tsconfig.lib.json",
                             "projects/ngx-theme-service/tsconfig.spec.json"
                         ],
-                        "exclude": [
-                            "**/node_modules/**"
-                        ]
+                        "exclude": ["**/node_modules/**"]
                     }
                 }
             }

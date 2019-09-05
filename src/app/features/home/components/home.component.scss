@@ -15,11 +15,25 @@ article {
         color: theme-var($--theme-secondary);
         font-weight: bold;
     }
+
+    p code {
+        white-space: normal;
+    }
+
+    img {
+        height: auto !important;
+    }
 }
 
-.light code {
-    background-color: #e8e8e8;
+.light {
+    code,
+    pre {
+        background-color: #e8e8e8;
+    }
 }
-.dark code {
-    background-color: #565656;
+.dark {
+    code,
+    pre {
+        background-color: #565656;
+    }
 }
