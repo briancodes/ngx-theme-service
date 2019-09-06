@@ -1,6 +1,6 @@
 {
     "name": "@bcodes/ngx-theme-service",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "Configurable theme switching service for use with CSS variables",
     "peerDependencies": {
         "@angular/common": ">=8.2.0",

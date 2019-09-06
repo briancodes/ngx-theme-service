@@ -33,13 +33,13 @@ import { ThemeService } from '@bcodes/ngx-theme-service';
             </div>
             <ul #themeSwitcher class="theme-switcher" *ngIf="switcherVisible">
                 <li
-                    (click)="handleThemeSelected('light')"
+                    (click)="handleThemeSelected($event, 'light')"
                     [class.selected]="(selected$ | async) === 'light'"
                 >
                     <fa-icon [icon]="['fas', 'sun']"></fa-icon>
                 </li>
                 <li
-                    (click)="handleThemeSelected('dark')"
+                    (click)="handleThemeSelected($event, 'dark')"
                     [class.selected]="(selected$ | async) === 'dark'"
                 >
                     <fa-icon [icon]="['fas', 'star-and-crescent']"></fa-icon>
@@ -48,7 +48,7 @@ import { ThemeService } from '@bcodes/ngx-theme-service';
         </nav>
         <nav class="nav-title">
             <h4>
-                Theming with CSS Variables:
+                NgxThemeService with CSS Variables:
             </h4>
             <fa-icon [icon]="['fab', 'sass']"></fa-icon>
             <fa-icon [icon]="['fab', 'css3-alt']"></fa-icon>
@@ -72,12 +72,17 @@ export class NavigationContainerComponent implements OnInit {
 
     ngOnInit() {}
 
-    handleThemeSelected(theme: string) {
-        this.themeService.switchTheme(theme);
-    }
-
     handleSwitcherClick(event: any = null) {
         this.switcherVisible = !this.switcherVisible;
+    }
+
+    handleThemeSelected(event: MouseEvent, theme: string) {
+        if (
+            (event.currentTarget as HTMLElement).classList.contains('selected')
+        ) {
+            return;
+        }
+        this.themeService.switchTheme(theme);
     }
 
     @HostListener('document:mousedown', ['$event.target'])
