@@ -6,13 +6,13 @@ import { switchMap, takeUntil, tap } from 'rxjs/operators';
 /** Apply a CSS class to the `<html>` element when switching themes */
 export interface ThemeTransitionConfig {
     readonly className: string;
-    /** remove class after delay in milliseconds */
-    readonly delay: number;
+    /** remove class after duration in milliseconds */
+    readonly duration: number;
 }
 
 export interface ThemeServiceConfig {
     readonly themes: ReadonlyArray<string>;
-    /** theme that should always be on `<html>` element */
+    /** theme that should always be on the target element if using explicit default theme */
     readonly defaultTheme?: string;
     /** optional transition configuration */
     readonly transitionConfig?: ThemeTransitionConfig;
@@ -31,25 +31,23 @@ export const THEME_CONFIG = new InjectionToken<ThemeServiceConfig>(
 })
 export class ThemeService implements OnDestroy {
     private stopListening$ = new Subject<boolean>();
-    private selectedTheme: BehaviorSubject<string>;
-    selectedTheme$: Observable<string>;
+    private selectedTheme: BehaviorSubject<string> = new BehaviorSubject(
+        this.config.defaultTheme || ''
+    );
+    selectedTheme$: Observable<string> = this.selectedTheme.asObservable();
 
     constructor(
         @Inject(THEME_CONFIG) private config: ThemeServiceConfig,
         @Inject(DOCUMENT) private document: Document
     ) {
-        this.selectedTheme = new BehaviorSubject(
-            this.config.defaultTheme || ''
-        );
-        this.selectedTheme$ = this.selectedTheme.asObservable();
-        this.globalThemeSubscribe();
+        this.setupSubscription();
     }
 
     switchTheme(className: string) {
         this.selectedTheme.next(className);
     }
 
-    private globalThemeSubscribe() {
+    private setupSubscription() {
         const transitionConfig = this.config.transitionConfig;
         const nonDefaultThemes = this.config.themes.filter(
             c => c !== this.config.defaultTheme
@@ -71,7 +69,7 @@ export class ThemeService implements OnDestroy {
                 }),
                 transitionConfig
                     ? switchMap(value => {
-                          return timer(transitionConfig.delay).pipe(
+                          return timer(transitionConfig.duration).pipe(
                               tap(x => {
                                   this.removeClasses([
                                       transitionConfig.className,

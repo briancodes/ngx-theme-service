@@ -86,10 +86,10 @@ fa-icon {
 */
 :host-context(.theme-transition) ::ng-deep li.selected fa-icon {
     svg[data-icon='sun'] {
-        animation: rotate-z $theme-transition-delay * 0.7 ease-out;
+        animation: rotate-z $theme-transition-duration * 0.7 ease-out;
     }
     svg[data-icon='star-and-crescent'] {
-        animation: rotate-y $theme-transition-delay * 0.7 ease-out;
+        animation: rotate-y $theme-transition-duration * 0.7 ease-out;
     }
 }
 
