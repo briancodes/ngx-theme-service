@@ -1,7 +1,7 @@
 ## NgxThemeService
 
 <p align="center">
-  <img alt="console.log" height="200px" src="https://user-images.githubusercontent.com/15702512/64343540-9c1ab580-cfe4-11e9-8644-9744b15644ea.gif">
+  <img alt="console.log" src="https://user-images.githubusercontent.com/15702512/64343540-9c1ab580-cfe4-11e9-8644-9744b15644ea.gif">
   <br>
   <i>Default light theme with transition</i>
 </p>
@@ -24,7 +24,7 @@ const themeServiceConfig: ThemeServiceConfig = {
     defaultTheme: 'light',
     transitionConfig: {
         className: 'theme-transition',
-        delay: 1500
+        duration: 1500
     }
 };
 
@@ -52,7 +52,7 @@ By default the theme classes (and optional transition class) will be applied to 
     defaultTheme: 'light',
     transitionConfig: {
         className: 'theme-transition',
-        delay: 1500
+        duration: 1500
     },
     targetElementSelector: 'body'
 ```

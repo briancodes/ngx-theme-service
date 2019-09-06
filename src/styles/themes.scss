@@ -10,6 +10,6 @@
 
 :root.theme-transition,
 :root.theme-transition * {
-    transition: background-color $theme-transition-delay !important;
+    transition: background-color $theme-transition-duration !important;
     transition-delay: 0s !important;
 }

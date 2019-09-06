@@ -110,13 +110,13 @@ describe('ThemeService', () => {
     });
 
     describe('theme switch with observable:', () => {
-        const TRANSITION_DELAY = 1000;
+        const TRANSITION_DURATION = 1000;
         const config: ThemeServiceConfig = {
             themes: ['light', 'dark', 'contrast'],
             defaultTheme: 'light',
             transitionConfig: {
                 className: 'theme-transition',
-                delay: TRANSITION_DELAY,
+                duration: TRANSITION_DURATION,
             },
             targetElementSelector: TARGET_SELECTOR,
         };
@@ -145,11 +145,11 @@ describe('ThemeService', () => {
                 expect(subscriptionTest.data).toEqual(themeClass);
 
                 // Check that transition in progress class remains on
-                // element until delay complete
-                tick(TRANSITION_DELAY * 0.5);
+                // element until duration complete
+                tick(TRANSITION_DURATION * 0.5);
                 expect(testDivHasClass(transitionClass)).toBe(true, themeClass);
 
-                tick(TRANSITION_DELAY * 0.5);
+                tick(TRANSITION_DURATION * 0.5);
                 expect(testDivHasClass(transitionClass)).toBe(
                     false,
                     themeClass
@@ -163,24 +163,24 @@ describe('ThemeService', () => {
             discardPeriodicTasks();
         }));
 
-        it('transition delay cancelled and restarted', fakeAsync(() => {
+        it('transition timer cancelled and restarted', fakeAsync(() => {
             const { testDiv, testDivHasClass } = createTestComponent();
             const service = new ThemeService(config, document);
             const transitionClass = config.transitionConfig.className;
 
-            tick(TRANSITION_DELAY * 0.9);
+            tick(TRANSITION_DURATION * 0.9);
             expect(testDivHasClass(transitionClass)).toBe(true);
 
             // Previous timer should cancel when theme switched
             service.switchTheme(config.themes[1]);
 
-            tick(TRANSITION_DELAY * 0.2);
+            tick(TRANSITION_DURATION * 0.2);
             expect(testDivHasClass(transitionClass)).toBe(true);
 
-            tick(TRANSITION_DELAY * 0.7);
+            tick(TRANSITION_DURATION * 0.7);
             expect(testDivHasClass(transitionClass)).toBe(true);
 
-            tick(TRANSITION_DELAY * 0.1);
+            tick(TRANSITION_DURATION * 0.1);
             expect(testDivHasClass(transitionClass)).toBe(false);
 
             discardPeriodicTasks();
