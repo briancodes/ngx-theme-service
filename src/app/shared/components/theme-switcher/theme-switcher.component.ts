@@ -12,7 +12,11 @@ import { ThemeService } from '@bcodes/ngx-theme-service';
     selector: 'app-theme-switcher',
     template: `
         <div #themeSwitcher>
-            <a role="button" (click)="handleSwitcherClick($event)">
+            <a
+                role="button"
+                (click)="handleSwitcherClick($event)"
+                [routerLink]=""
+            >
                 <fa-icon [icon]="['fas', 'fill-drip']"></fa-icon>
             </a>
             <ul class="theme-menu" *ngIf="switcherVisible">
