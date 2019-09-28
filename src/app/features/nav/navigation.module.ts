@@ -1,14 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from '../../shared/shared.module';
 import { NavigationContainerComponent } from './containers/navigation-container.component';
 
 const COMPONENTS = [NavigationContainerComponent];
 
 @NgModule({
     declarations: [...COMPONENTS],
-    imports: [CommonModule, RouterModule, FontAwesomeModule],
+    imports: [SharedModule],
     exports: [...COMPONENTS],
 })
 export class NavigationModule {}

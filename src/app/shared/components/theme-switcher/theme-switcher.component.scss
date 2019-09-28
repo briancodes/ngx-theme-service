@@ -1,0 +1,60 @@
+@import 'variables';
+@import 'mixins';
+
+fa-icon {
+    font-size: $icon-size;
+    color: theme-var($--theme-on-primary);
+}
+
+.theme-menu {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 100%;
+    right: 5px;
+    width: 100px;
+    background-color: theme-var($--theme-secondary);
+    color: theme-var($--theme-on-secondary);
+    border-radius: 0 0 10px 10px;
+    border: 2px solid theme-var($--theme-on-secondary);
+    @include bs-elevate();
+
+    li {
+        margin-bottom: 0px;
+        cursor: pointer;
+        &.selected fa-icon {
+            border-bottom: 2px solid theme-var($--theme-on-secondary);
+        }
+    }
+}
+
+/*
+    Css needed to break out of ViewEncapsulation.Emulated for `.theme-transition`, and
+    to go deep to target `fa-icon svg[data-icon='sun']`
+*/
+:host-context(.theme-transition) ::ng-deep li.selected fa-icon {
+    svg[data-icon='sun'] {
+        animation: rotate-z $theme-transition-duration * 0.7 ease-out;
+    }
+    svg[data-icon='star-and-crescent'] {
+        animation: rotate-y $theme-transition-duration * 0.7 ease-out;
+    }
+}
+
+@keyframes rotate-z {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate-y {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
